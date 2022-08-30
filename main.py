@@ -6,7 +6,7 @@ import pathlib
 import time
 import datetime
 
-#from matplotlib import pyplot as plt
+from matplotlib import pyplot as plt
 #from IPython import display
 # Dataset loading
 dataset_name = "facades"
