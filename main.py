@@ -303,7 +303,7 @@ def generate_images(model, test_input, tar, fname):
     # Getting the pixel values in the [0, 1] range to plot.
     plt.imshow(display_list[i] * 0.5 + 0.5)
     plt.axis('off')
-  plt.imsave(fname)
+  plt.savefig(fname)
 
 for example_input, example_target in test_dataset.take(1):
   generate_images(generator, example_input, example_target, 'example1.png')
