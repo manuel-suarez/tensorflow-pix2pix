@@ -22,4 +22,4 @@ path_to_zip  = pathlib.Path(path_to_zip)
 
 PATH = path_to_zip.parent/dataset_name
 
-list(PATH.parent.iterdir())
+print(list(PATH.parent.iterdir()))
