@@ -164,3 +164,7 @@ def upsample(filters, size, apply_dropout=False):
   result.add(tf.keras.layers.ReLU())
 
   return result
+
+up_model = upsample(3, 4)
+up_result = up_model(down_result)
+print (up_result.shape)
