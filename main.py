@@ -219,3 +219,6 @@ def Generator():
   x = last(x)
 
   return tf.keras.Model(inputs=inputs, outputs=x)
+
+generator = Generator()
+#tf.keras.utils.plot_model(generator, show_shapes=True, dpi=64)
