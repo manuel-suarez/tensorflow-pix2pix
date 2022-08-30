@@ -222,3 +222,19 @@ def Generator():
 
 generator = Generator()
 #tf.keras.utils.plot_model(generator, show_shapes=True, dpi=64)
+
+# Generator loss
+LAMBDA = 100
+
+loss_object = tf.keras.losses.BinaryCrossentropy(from_logits=True)
+
+def generator_loss(disc_generated_output, gen_output, target):
+  gan_loss = loss_object(tf.ones_like(disc_generated_output), disc_generated_output)
+
+  # Mean absolute error
+  l1_loss = tf.reduce_mean(tf.abs(target - gen_output))
+
+  total_gen_loss = gan_loss + (LAMBDA * l1_loss)
+
+  return total_gen_loss, gan_loss, l1_loss
+
