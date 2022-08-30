@@ -354,7 +354,7 @@ def fit(train_ds, test_ds, steps):
 
       start = time.time()
 
-      generate_images(generator, example_input, example_target)
+      generate_images(generator, example_input, example_target, f"train_{step}.png")
       print(f"Step: {step//1000}k")
 
     train_step(input_image, target, step)
