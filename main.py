@@ -1,6 +1,6 @@
 # Setup
 import tensorflow as tf
-
+print(tf.__version__)
 import os
 import pathlib
 import time
@@ -23,3 +23,7 @@ path_to_zip  = pathlib.Path(path_to_zip)
 PATH = path_to_zip.parent/dataset_name
 
 print(list(PATH.parent.iterdir()))
+
+sample_image = tf.io.read_file(str(PATH / 'train/1.jpg'))
+sample_image = tf.io.decode_jpeg(sample_image)
+print(sample_image.shape)
